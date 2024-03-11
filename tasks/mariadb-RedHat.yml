@@ -97,16 +97,6 @@
     - innodb_file_format=barracuda
     - innodb_file_per_table=1
 
-#- name: mariadb settings for client
-#  notify:
-#    - restart mariadb
-#  ansible.builtin.lineinfile:
-#    name: /etc/mysql/mariadb.conf.d/50-server.cnf
-#    insertafter: '^\[client]'
-#    line: "{{ item }}"
-#  with_items:
-#    - default-character-set = utf8mb4
-
 - name: DATABASE - mariadb settings for server
   notify:
     - restart mariadb
