@@ -1,0 +1,11 @@
+---
+
+- name:Package dependency for Redhat OS
+  include_tasks: packege_dependecy-RedHat.yml
+
+- name:Package dependency for Ubuntu OS
+  include_tasks: packege_dependecy-Ubuntu.yml
+
+- name: Package dependency for Susu Linux
+  include_tasks: packege_dependecy-Suse.yml
+
