@@ -1,5 +1,5 @@
 ---
-# install
+
 - name: DATABASE - MariaDB Repo
   copy:
     src: mariadb.redhat.repo.j2
@@ -43,11 +43,7 @@
       value: utf8mb4
 
 - name: DATABASE - save my.cnf
-#  become: yes
-#  become_user: "{{ drupal_os_user }}"
   ansible.builtin.ini_file:
-    #owner: "{{ drupal_os_user }}"
-    #group: "{{ drupal_os_user }}"
     owner: root
     group: root
     path: "/home/{{ drupal_os_user }}/.my.cnf"
